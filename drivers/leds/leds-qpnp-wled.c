@@ -145,8 +145,12 @@
 
 #define QPNP_WLED_SEC_ACCESS_REG(b)    (b + 0xD0)
 #define QPNP_WLED_SEC_UNLOCK           0xA5
-
+#ifdef CONFIG_ZTEMT_BREATH_LEDS
+#define QPNP_WLED_MAX_STRINGS		 2
+#else
 #define QPNP_WLED_MAX_STRINGS		4
+#endif
+
 #define WLED_MAX_LEVEL_4095		4095
 #define QPNP_WLED_RAMP_DLY_MS		20
 #define QPNP_WLED_TRIGGER_NONE		"none"
