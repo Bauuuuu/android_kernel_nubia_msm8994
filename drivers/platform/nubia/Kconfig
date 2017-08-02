@@ -1,0 +1,25 @@
+# NUBIA/Nubia configuration options
+
+config MACH_NUBIA
+	bool "NUBIA device"
+	depends on ARCH_MSM
+	help
+	  Support for NUBIA products
+
+config MACH_NUBIA_MSM8994
+	bool "NUBIA MSM8994"
+	depends on ARCH_MSM8994
+	select MACH_NUBIA
+	help
+	  Support for MSM8994 NUBIA variants
+
+choice
+	prompt "NUBIA board selection"
+
+	config MACH_NUBIA_NX508J
+		bool "NUBIA_NX508J board"
+		select MACH_NUBIA_MSM8994
+		help
+		  Support for NUBIA Nubia NX508J variant
+
+endchoice
